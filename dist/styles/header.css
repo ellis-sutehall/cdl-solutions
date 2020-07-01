@@ -1,0 +1,15 @@
+.site-header .navbar-brand .header-logo {
+	text-indent: -1000rem;
+	display: block;
+	width: 150px;
+	height: 45px;
+	background-image: url("../img/cdl-solutions-header-logo");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.menu-is-open .site-header .navbar-menu {
+	display: flex;
+}
+
+/*# sourceMappingURL=header.css.map */

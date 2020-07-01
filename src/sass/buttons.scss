@@ -1,0 +1,16 @@
+.button {
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: .8rem;
+    @include from($desktop) {
+        font-size: 1.500rem;
+    }
+    &.is-primary {
+        background-color: $dark-blue;
+        color: white;
+    }
+    &.is-secondary {
+        background-color: white;
+        color: $dark-blue;
+    }
+}

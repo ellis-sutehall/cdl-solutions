@@ -144,9 +144,16 @@ add_action( 'widgets_init', 'cdl_solutions_widgets_init' );
  */
 function cdl_solutions_scripts() {
 	wp_enqueue_style( 'cdl-solutions-style', get_stylesheet_uri(), array(), _S_VERSION );
+	
 	wp_style_add_data( 'cdl-solutions-style', 'rtl', 'replace' );
 
+	wp_enqueue_style( 'cdl-solutions-google-fonts-raleway', 'https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap' );
+	
+	wp_enqueue_style( 'cdl-solutions-style-app', get_template_directory_uri() . '/dist/styles/app.css', array(), _S_VERSION );
+
 	wp_enqueue_script( 'cdl-solutions-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+	wp_enqueue_script( 'cdl-solutions-app', get_template_directory_uri() . '/dist/js/app.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

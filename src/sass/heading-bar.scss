@@ -1,0 +1,12 @@
+.heading-bar {
+    &.dark-blue-bg {
+        .title {
+            color: white;
+        }
+    }
+    &.light-blue-bg {
+        .title {
+            color:$dark-blue;
+        }
+    }
+}

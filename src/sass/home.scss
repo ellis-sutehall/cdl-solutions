@@ -1,0 +1,24 @@
+.page-template-home {
+    .acf-hero {
+        padding-top: $size-6;
+        .columns {
+            .column {
+                &.dark-blue-bg {
+                    display: flex;
+                    order: -1;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: $size-4;
+                    p {
+                        margin-bottom: $size-4;
+                    }
+                }
+            }
+        }
+    }
+    .section.who {
+        p {
+            margin-bottom: $size-4;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.dark-blue-bg {
+    background-color: $dark-blue;
+    .title {
+        &.is-1 {
+            color: white;
+        }
+    }
+    p {
+        color: white;
+    }
+}
+
+.mid-blue-bg {
+    background-color: $mid-blue;
+}
+
+.light-blue-bg {
+    background-color: $light-blue;
+}
+
+.mid-blue-text {
+    color: $mid-blue;
+}

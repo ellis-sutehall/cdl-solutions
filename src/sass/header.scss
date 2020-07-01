@@ -1,0 +1,74 @@
+.site-header {
+    height: $header-height;
+
+    @include from($desktop) {
+        height: $header-height-lrg;
+        display: flex;
+        justify-content: space-between;
+    }
+    .navbar-brand {
+        width: 30%;
+        .header-logo {
+            text-indent: -1000rem;
+            display: block;
+            width: $logo-width / 2;
+            height: $logo-height / 2;
+            background-image: url('../img/cdl-solutions-header-logo');
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin: $size-6 / 2;
+            @include from($desktop) {
+                width: $logo-width;
+                height: $logo-height;
+            }
+        }
+        .navbar-burger {
+            background: transparent;
+            color: $dark-blue;
+        }
+    }
+    .navbar-menu {
+        background-color: $dark-blue;
+        height: 100vh;
+        display: flex;
+        position: fixed;
+        width: 100%;
+        right: -100%;
+        transition: right .5s ease;
+        .menu-is-open & {
+            // display: flex;
+            right: 0;
+        }
+        @include from($desktop) {
+            position: unset;
+            right: initial;
+            height: auto;
+            background-color: transparent;
+            width: 70%;
+            justify-content: flex-end;
+        }
+        .menu-menu-1-container {
+            .menu {
+                margin-top: $size-2;
+                text-align: center;
+                text-transform: uppercase;
+                li {
+                    display: block;
+                    a {
+                        color: $light-blue;
+                    }
+                }
+                @include from($desktop) {
+                    li {
+                        padding-left: $size-2;
+                        a {
+
+                            color: black;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
