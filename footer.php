@@ -11,21 +11,46 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'cdl-solutions' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'cdl-solutions' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'cdl-solutions' ), 'cdl-solutions', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer class="footer">
+	<div class="container">
+		<div class="columns">
+			<div class="column is-one-third">
+				<img src="<?php echo get_template_directory_uri() . '/dist/img/cdl-solutions-footer-logo-white.svg' ?>" alt="CDL Solutions Logo" width="300">
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+			</div>
+			<div class="column is-one-third">
+				<h4 class="title is-4">Contact Info</h4>
+				<p><span class="dark-blue-text">T</span> 012345678</p>
+				<p><span class="dark-blue-text">E</span> info@example.com</p>
+				<div class="social-icons">
+					<a href="#">
+						<img src="<?php echo get_template_directory_uri() . '/dist/img/icons/facebook-icon.svg' ?>" alt="Facebook Icon" width="30">
+					</a>
+					<a href="#">
+						<img src="<?php echo get_template_directory_uri() . '/dist/img/icons/twitter-icon.svg' ?>" alt="Twitter Icon" width="30">
+					</a>
+					<a href="#">
+						<img src="<?php echo get_template_directory_uri() . '/dist/img/icons/linkedin-icon.svg' ?>" alt="LinkedIn Icon" width="30">
+					</a>
+				</div>
+			</div>
+			<div class="column is-one-third">
+			<h4 class="title is-4">Contact Form</h4>
+				<?php echo do_shortcode('[contact-form-7 id="8" title="Contact Form Footer"]'); ?>
+			</div>
+		</div>
+	</div>
+	</footer>
+	<section class="section sub-footer">
+		<div class="container">
+			<div class="copyright">
+				<p><span class="link-blue-text">Copyright &copy; <?php echo Date('Y'); ?> CDL Solutions Ltd.</span> All Rights Reserved.</p>
+			</div>
+			<div class="credit">
+				<p>Website by <a class="link-blue-text" href="https://www.redgraphic.co.uk/" target="_blank" rel="norefferer">Red Graphic</a></p>
+			</div>
+		</div>
+	</section>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

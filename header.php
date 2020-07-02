@@ -27,7 +27,6 @@
 
 	<header id="masthead" class="site-header navbar">
 		<div class="container">
-			
 			<div class="navbar-brand">
 				<a class="header-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">CDL Solutions | Home</a>
 				<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="site-navigation">

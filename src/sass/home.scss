@@ -1,24 +1,296 @@
 .page-template-home {
+    .hero-wrap {
+        @include from($desktop) {
+            width: 100%;
+            min-height: calc(100vh - #{$header-height-lrg});
+            background-color: #333;
+            position: relative;
+        }
+    }
     .acf-hero {
-        padding-top: $size-6;
+        // padding-top: $size-6;
+        padding-bottom: 0;
+        @include from($desktop) {
+            height: calc(100vh - (#{$header-height-lrg} + 230px ));
+        }
+        .hero-bg {
+            height: 100%;
+            position: relative;
+            display: none;
+            @include from($desktop) {
+                display: flex;
+            }
+            .partial-logo {
+                display: none;
+                @include from($desktop) {
+                    position: absolute;
+                    display: block;
+                    height: 250px;
+                    width: 220px;
+                    bottom: -14px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
         .columns {
+            &:last-child {
+                margin-bottom: 0;
+            }
             .column {
-                &.dark-blue-bg {
+                &.dark-blue-bg-m {
                     display: flex;
                     order: -1;
                     flex-direction: column;
                     justify-content: center;
                     padding: $size-4;
+                    @include from($desktop) {
+                        padding: 0;
+                    }
+
+                    .title.is-1 {
+                        margin-bottom: $size-3;
+                        color: white;
+                    }
+                    .title.is-4 {
+                        margin-bottom: $size-6 / 2;
+                    }
                     p {
                         margin-bottom: $size-4;
+                        color: white;
+                        font-weight: normal;
+                        @include from($desktop) {
+                            font-size: 1.750rem;
+                            line-height: 2.125rem;
+                            padding-right: $size-1 * 4;
+                            margin-bottom: $size-1;
+                        }
                     }
+                    .button {
+                        @include from($desktop) {
+                            font-size: 1.5rem;
+                        }
+
+                    }
+                }
+            }
+        }
+        .hero-bg-overlay {
+            @include from($desktop) {
+                position: absolute;
+                top: 4rem;
+                left: 0;
+                right: 0;
+            }
+            & > .columns {
+                @include mobile {
+                    margin: 0;
+                }
+                @include tablet {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .three-col {
+        .title {
+            color: $dark-blue;
+            margin-bottom: $size-6;
+            text-transform: uppercase;
+            font-size: $size-5;
+            font-weight: bold;
+            margin-left: calc(40px + #{$size-3});
+            @include from($desktop) {
+                margin-left: calc(75px + #{$size-3})
+            }
+        }
+        p {
+            font-size: $size-6;
+            // line-height: $size-6;
+            @include from($desktop) {
+                font-size: 1.375rem;
+            }
+        }
+        .column {
+            @include from($desktop) {
+                // padding-left: $column-gap * 2;
+                // padding-right: $column-gap * 2;
+                padding: $column-gap * 2;
+            }
+            &:first-of-type {
+                @include from($desktop) {
+                    border-right: 2px dashed $mid-blue;
+                    padding-left: 0;
+            }
+            }
+            &:nth-of-type(2) {
+                @include from($desktop) {
+                    border-right: 2px dashed $mid-blue;
+                }
+            }
+            .icon-summary-wrap {
+                display: flex;
+                img {
+                    height: 40px;
+                    width: 40px;
+                    @include from($desktop) {
+                        height: 75px;
+                        width: 75px;
+                    }
+                }
+                p {
+                    margin-left: $size-3;
                 }
             }
         }
     }
     .section.who {
+        @include from($desktop) {
+            padding-top: $size-1 * 2;
+            padding-bottom: $size-1 * 2;
+        }
+        .title {
+            color: $dark-blue;
+        }
         p {
             margin-bottom: $size-4;
+            font-size: $size-6;
+            // line-height: $size-6;
+            @include from($desktop) {
+                font-size: 1.375rem;
+            }
+        }
+    }
+    .two-col {
+        position: relative;
+        .dashed-line {
+            position: absolute;
+            height: 90%;
+            border: 2px dashed $light-blue;
+            width: 2px;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            @include from($desktop) {
+                display: block;
+            }
+        }
+        .columns {
+            &.flex-m {
+                @include mobile {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+        .column {
+            padding: $size-4;
+            position: relative;
+            @include from($desktop) {
+                padding: $size-1;
+            }
+            &:nth-of-type(2n+2) {
+                border-bottom: 2px dashed $light-blue;
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 40px;
+                    height: 45px;
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -20px;
+                    background-image: url('../img/tiny-logo.svg');
+                    background-repeat: no-repeat;
+                }
+                @include from($desktop) {
+                    border: 0;
+                    &::before {
+                        display: none;
+                        transform: translateX(0);
+                    }
+                }
+            }
+            &:last-of-type {
+                border: 0;
+                &::before {
+                    display: none;
+                }
+            }
+            &.show-logo {
+                @include from($desktop) {
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 50px;
+                        height: 55px;
+                        position: absolute;
+                        left: -25px;
+                        background-image: url('../img/tiny-logo.svg');
+                        background-repeat: no-repeat;
+                    }
+                    &.top {
+                        &::before {
+                            top: 22.5px;
+                        }
+                    }
+                    &.middle {
+                        &::before {
+                            top: 50%;
+                        }
+                    }
+                    &.bottom {
+                        &::before {
+                            bottom: -22.5px;
+                        }
+                    }
+                }
+            }
+            &.order {
+                &.one {
+                    @include mobile {
+                        order: 1;
+                    }
+                }
+                &.two {
+                    @include mobile {
+                        order: 2;
+                    }
+                }
+                &.three {
+                    @include mobile {
+                        order: 3;
+                    }
+                }
+                &.four {
+                    @include mobile {
+                        order: 4;
+                    }
+                }
+                &.five {
+                    @include mobile {
+                        order: 5;
+                    }
+                }
+                &.six {
+                    @include mobile {
+                        order: 6;
+                    }
+                }
+            }
+        }
+        .title {
+            &.is-2 {
+                color: $dark-blue;
+            }
+        }
+        p {
+            font-size: $size-6;
+            // line-height: $size-6;
+            @include from($desktop) {
+                font-size: 1.375rem;
+            }
         }
     }
 }

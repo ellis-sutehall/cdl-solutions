@@ -5,28 +5,29 @@ body {
 h1.title.is-1 {
     font-size: $size-4;
     @include from($desktop) {
-        font-size: 3.438rem;
+        font-size: 2.75rem;
     }
 }
 
 h2.title.is-2 {
     font-size: $size-5;
     @include from($desktop) {
-    font-size: 2.813rem;
+    font-size: 2.75rem;
     }
 }
 
 h3.title.is-3 {
-    font-size: $size-6;
+    // font-size: $size-6;
     @include from($desktop) {
-        font-size: 2.125rem;
+        // 30px
+        font-size: 1.875rem;
     }
 }
 
 h4.title.is-4 {
     font-size: $size-6;
     @include from($desktop) {
-        font-size: 1.875rem;
+        font-size: 2.125rem;
     }
 }
 
@@ -34,4 +35,9 @@ h1, h2 {
     &.title {
         text-transform: uppercase;
     }
+}
+
+p {
+    font-weight: 600;
+    line-height: 1.625rem;
 }
