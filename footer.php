@@ -19,7 +19,7 @@
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 			</div>
 			<div class="column is-one-third">
-				<h4 class="title is-4">Contact Info</h4>
+				<h3 class="title is-3">Contact Info</h3>
 				<p><span class="dark-blue-text">T</span> 012345678</p>
 				<p><span class="dark-blue-text">E</span> info@example.com</p>
 				<div class="social-icons">
@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<div class="column is-one-third">
-			<h4 class="title is-4">Contact Form</h4>
+			<h3 class="title is-3">Contact Form</h3>
 				<?php echo do_shortcode('[contact-form-7 id="8" title="Contact Form Footer"]'); ?>
 			</div>
 		</div>

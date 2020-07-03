@@ -9,4 +9,10 @@ function mobileMenu() {
     })
 }
 
-mobileMenu()
+mobileMenu();
+
+ScrollOut(
+    {
+        once: true
+    }
+);

@@ -10,12 +10,12 @@ get_header(); ?>
         <div class="columns hero-bg">
             <div class="column is-half dark-blue-bg"></div>
             <div class="column is-half mid-blue-bg"></div>
-            <img class="partial-logo" src="<?php echo get_template_directory_uri() . '/dist/img/partial-logo.svg' ?>" alt="Partial Logo" width="220" height="250">
+            <img data-scroll class="partial-logo" src="<?php echo get_template_directory_uri() . '/dist/img/partial-logo.svg' ?>" alt="Partial Logo" width="220" height="250">
         </div>
 
         <div class="container hero-bg-overlay">
             <div class="columns">
-                <div class="column is-half mid-blue-bg-m has-text-centered has-text-right-desktop">
+                <div data-scroll class="column is-half mid-blue-bg-m has-text-centered has-text-right-desktop">
                     <?php 
                         $image = get_field('hero_image');
                         if( !empty( $image ) ): ?>
@@ -23,7 +23,7 @@ get_header(); ?>
                     <?php endif; ?>
                 </div>
                 
-                <div class="column is-half dark-blue-bg-m">
+                <div data-scroll class="column is-half dark-blue-bg-m">
                     <?php if( get_field('page_title') ): ?>
                         <h1 class="title is-1"><?php the_field('page_title') ?></h1>
                     <?php endif;?>
@@ -48,7 +48,7 @@ get_header(); ?>
         </div>
     </div>
 
-    <section class="section three-col light-blue-bg">
+    <section data-scroll class="section three-col light-blue-bg">
         <div class="container">
             <div class="columns">
             <?php 
@@ -78,10 +78,10 @@ get_header(); ?>
     </section>
 </section>
 
-<section class="section who">
+<section class="section single-col">
     <div class="container has-text-centered">
         <?php if(get_field('single_col_title')): ?>
-        <h2 class="title is-2"><?php echo the_field('single_col_title') ?></h2>
+        <h2 class="title is-2" data-scroll><?php echo the_field('single_col_title') ?></h2>
         <?php endif; ?>
         <?php if(get_field('single_col_body')): ?>
             <p><?php echo the_field('single_col_body') ?></p>
@@ -97,23 +97,12 @@ get_header(); ?>
     </div>
 </section>
 
-<?php
-    $bg_colour = get_field('background_colour');
-    $bg_colour = strtolower($bg_colour);
-    $bg_colour = str_replace(' ', '-', $bg_colour);
-?>
-<section class="section heading-bar <?php echo $bg_colour ?>-bg">
-    <div class="container">
-    <?php if(get_field('heading_bar_title')): ?>
-        <h2 class="title is-2"><?php echo the_field('heading_bar_title') ?></h2>
-        <?php endif; ?>
-    </div>
-</section>
+<?php require get_template_directory() . '/inc/heading-bar.php'; ?>
 
 <section class="section two-col">
     <div class="container">
-    <div class="dashed-line"></div>
-    <div class="columns is-multiline flex-m is-vcentered">
+    <div data-scroll class="dashed-line"></div>
+    <div class="columns is-multiline flex-m is-vcentered is-8-desktop is-variable">
         <?php 
             if(have_rows('two_columns')):
                 while(have_rows('two_columns')) : the_row();
@@ -137,7 +126,7 @@ get_header(); ?>
                 <?php endif; ?>
                 <?php
                 if( !empty( $home_two_col_image ) ): ?>
-                    <img src="<?php echo esc_url($home_two_col_image['url']); ?>" alt="<?php echo esc_attr($home_two_col_image['alt']); ?>" />
+                    <img data-scroll src="<?php echo esc_url($home_two_col_image['url']); ?>" alt="<?php echo esc_attr($home_two_col_image['alt']); ?>" />
                 <?php endif; ?>
             </div>
         <?php

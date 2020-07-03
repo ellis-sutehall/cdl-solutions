@@ -55,11 +55,30 @@
             }
             .menu {
                 margin-top: $size-2;
-                text-align: center;
                 text-transform: uppercase;
+                padding-left: $size-6;
+                @include from($desktop) {
+                    display: flex;
+                    padding-left: 0;
+                }
                 li {
                     display: block;
-                    
+                    padding-bottom: $size-6 / 2;
+                    &.menu-item-has-children {
+                        &::after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            width: 14px;
+                            height: 9px;
+                            right: 10px;
+                            top: 6px;
+                            background-image: url('../img/chevron-down.svg');
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            background-position: center;
+                        }
+                    }
                     a {
                         color: $light-blue;
                     }
@@ -67,7 +86,11 @@
                 @include from($desktop) {
                     li {
                         padding-left: $size-1;
-                        &.current-menu-item {
+                        padding-right: $size-3;
+                        &:last-of-type {
+                            padding-right: 0;
+                        }
+                        &.current-menu-item, &.current-menu-parent {
                             &::before {
                                 content: '';
                                 display: block;
@@ -83,18 +106,15 @@
                             }
                         }
                         &.menu-item-has-children {
+                            &:hover {
+                                .sub-menu {
+                                    left: auto;
+                                    top: $size-6;
+                                }
+                            }
                             &::after {
-                                content: '';
-                                display: block;
-                                position: absolute;
-                                width: 14px;
-                                height: 9px;
-                                right: -25px;
+                                right: 10px;
                                 top: 6px;
-                                background-image: url('../img/chevron-down.svg');
-                                background-repeat: no-repeat;
-                                background-size: contain;
-                                background-position: center;
                             }
                         }
                         a {
@@ -104,14 +124,46 @@
                     }
                 }
                 .sub-menu {
+                    float: none;
+                    box-shadow: none;
+                    position: relative;
                     display: block;
-                    background: $dark-blue;
-                    text-align: left;
-                    margin-left: 0;
+                    top: initial;
+                    left: initial;
+                    font-size: 0.875rem;
+                    margin-top: $size-6;
+                    @include from($desktop) {
+                        // float: left;
+                        position: absolute;
+                        top: 100%;
+                        left: -999em;
+                        z-index: 99999;
+                        display: block;
+                        background: $light-blue;
+                        text-align: left;
+                        margin-left: 0;
+                    }
                     li {
-                        padding: $size-6 $size-4;
+                        padding-bottom: $size-6 / 2;
+                        @include from($desktop) {
+                            padding: $size-6 $size-4;
+                            &:hover {
+                                background-color: $mid-blue;
+                            }
+                            &.current-menu-item, &.current-menu-parent {
+                                &::before {
+                                    display: none;
+                                }
+                            }
+                        }
                         a {
-                        color: white;
+                            color: white;
+                            width: 100%;
+                        @include from($desktop) {
+                            width: 200px;
+                            color: $dark-blue;
+                        }
+
                         }
                     }
                 }

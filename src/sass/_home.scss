@@ -3,7 +3,7 @@
         @include from($desktop) {
             width: 100%;
             min-height: calc(100vh - #{$header-height-lrg});
-            background-color: #333;
+            background-color: $light-blue;
             position: relative;
         }
     }
@@ -30,6 +30,16 @@
                     bottom: -14px;
                     left: 50%;
                     transform: translateX(-50%);
+                    opacity: 0;
+                    
+                    &[data-scroll="in"] {
+                        opacity: 1;
+                    }
+                    
+                    &[data-scroll] {
+                        transition: all 1s;
+                        transition-delay: 1s;
+                    }
                 }
             }
         }
@@ -66,19 +76,13 @@
                             margin-bottom: $size-1;
                         }
                     }
-                    .button {
-                        @include from($desktop) {
-                            font-size: 1.5rem;
-                        }
-
-                    }
                 }
             }
         }
         .hero-bg-overlay {
             @include from($desktop) {
                 position: absolute;
-                top: 4rem;
+                top: 1rem;
                 left: 0;
                 right: 0;
             }
@@ -90,14 +94,51 @@
                     margin: 0;
                 }
             }
+            .column {
+                &:first-of-type {
+                    @include from($desktop) {
+                        opacity: 0;
+                        transform: translateX(100px);
+                        &[data-scroll="in"] {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                    }
+                }
+                &:last-of-type {
+                    @include from($desktop) {
+                        opacity: 0;
+                        transform: translateX(-100px);
+                        &[data-scroll="in"] {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                    }
+                }
+                &[data-scroll] {
+                    transition: all 1s;
+                }
+            }
         }
     }
     .three-col {
+        @include from($desktop) {
+            opacity: 0;
+            &[data-scroll="in"] {
+                opacity: 1;
+                transition: opacity 1s;
+            }
+            &[data-scroll] {
+                transition: all 1s;
+                transition-delay: 2s;
+            }
+        }
+
         .title {
             color: $dark-blue;
             margin-bottom: $size-6;
             text-transform: uppercase;
-            font-size: $size-5;
+            // font-size: $size-5;
             font-weight: bold;
             margin-left: calc(40px + #{$size-3});
             @include from($desktop) {
@@ -144,7 +185,7 @@
             }
         }
     }
-    .section.who {
+    .single-col {
         @include from($desktop) {
             padding-top: $size-1 * 2;
             padding-bottom: $size-1 * 2;
@@ -152,13 +193,9 @@
         .title {
             color: $dark-blue;
         }
+        
         p {
-            margin-bottom: $size-4;
-            font-size: $size-6;
-            // line-height: $size-6;
-            @include from($desktop) {
-                font-size: 1.375rem;
-            }
+            margin-bottom: $size-1;
         }
     }
     .two-col {
@@ -174,6 +211,14 @@
             display: none;
             @include from($desktop) {
                 display: block;
+                opacity: 0;
+                &[data-scroll="in"] {
+                    opacity: 1;
+                }
+                &[data-scroll] {
+                    transition: all 1s;
+                    transition-delay: 1s;
+                }
             }
         }
         .columns {
@@ -189,9 +234,11 @@
             position: relative;
             @include from($desktop) {
                 padding: $size-1;
+                padding-left: $size-1 *2;
             }
-            &:nth-of-type(2n+2) {
+            &:nth-of-type(2), &:nth-of-type(3) {
                 border-bottom: 2px dashed $light-blue;
+                margin-bottom: $size-4;
                 &::before {
                     content: '';
                     display: block;
@@ -204,8 +251,12 @@
                     background-image: url('../img/tiny-logo.svg');
                     background-repeat: no-repeat;
                 }
+                p {
+                    margin-bottom: $size-4;
+                }
                 @include from($desktop) {
                     border: 0;
+                    margin-bottom: 0;
                     &::before {
                         display: none;
                         transform: translateX(0);
@@ -279,17 +330,37 @@
                     }
                 }
             }
+            &:nth-of-type(odd) {
+                img {
+                    transform: translateX(-100px);
+                    opacity: 0;
+                    &[data-scroll="in"] {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                    &[data-scroll] {
+                        transition: all 1s;
+                    }
+                }
+            }
+
+            &:nth-of-type(even) {
+                img {
+                    transform: translateX(100px);
+                    opacity: 0;
+                    &[data-scroll="in"] {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                    &[data-scroll] {
+                        transition: all 1s;
+                    }
+                }
+            }
         }
         .title {
             &.is-2 {
                 color: $dark-blue;
-            }
-        }
-        p {
-            font-size: $size-6;
-            // line-height: $size-6;
-            @include from($desktop) {
-                font-size: 1.375rem;
             }
         }
     }

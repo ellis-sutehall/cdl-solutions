@@ -6,8 +6,10 @@
     background-repeat: no-repeat;
     background-size: 25% 75%;
     text-align: right;
-    padding-left: 5rem;
+    padding-left: $size-2;
     @include from($desktop) {
+        font-size: 1.75rem;
+        padding-left: 5rem;
         font-size: 1.500rem;
     }
     &.is-primary {
