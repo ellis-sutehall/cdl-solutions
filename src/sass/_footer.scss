@@ -6,6 +6,13 @@
         padding-bottom: 4rem;
     }
     .column {
+        &.footer-logo {
+            img {
+                @include from($desktop) {
+                   margin-bottom: $size-4;
+                }
+            }
+        }
         &:nth-of-type(2) {
             @include from($desktop) {
                 padding-left: $size-1;

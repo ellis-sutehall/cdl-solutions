@@ -14,7 +14,7 @@
 	<footer class="footer">
 	<div class="container">
 		<div class="columns">
-			<div class="column is-one-third">
+			<div class="column is-one-third footer-logo">
 				<img src="<?php echo get_template_directory_uri() . '/dist/img/cdl-solutions-footer-logo-white.svg' ?>" alt="CDL Solutions Logo" width="300">
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 			</div>

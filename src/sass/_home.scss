@@ -73,7 +73,7 @@
                             font-size: 1.750rem;
                             line-height: 2.125rem;
                             padding-right: $size-1 * 4;
-                            margin-bottom: $size-1;
+                            margin-bottom: 5rem;
                         }
                     }
                 }
@@ -162,6 +162,7 @@
                 @include from($desktop) {
                     border-right: 2px dashed $mid-blue;
                     padding-left: 0;
+                    padding-right: 3rem;
             }
             }
             &:nth-of-type(2) {

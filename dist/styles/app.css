@@ -11503,7 +11503,7 @@ form.wpcf7-form .button {
 
 @media screen and (min-width: 1024px) {
 	.site-header {
-		height: 131px;
+		height: 150px;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -11706,6 +11706,12 @@ form.wpcf7-form .button {
 }
 
 @media screen and (min-width: 1024px) {
+	.footer .column.footer-logo img {
+		margin-bottom: 1.5rem;
+	}
+}
+
+@media screen and (min-width: 1024px) {
 	.footer .column:nth-of-type(2) {
 		padding-left: 3rem;
 	}
@@ -11849,7 +11855,7 @@ form.wpcf7-form .button {
 	background-image: url("../img/button-bg-white.svg");
 	background-repeat: no-repeat;
 	background-size: 20%;
-	background-position: 100% 55px;
+	background-position: 100% 28px;
 }
 
 @media screen and (min-width: 769px) {
@@ -11904,6 +11910,7 @@ form.wpcf7-form .button {
 	.services-two-col .columns .column {
 		min-height: 620px;
 		opacity: 0;
+		margin-bottom: 5rem;
 	}
 	.services-two-col .columns .column:nth-of-type(1)[data-scroll="in"] {
 		opacity: 1;
@@ -11930,10 +11937,21 @@ form.wpcf7-form .button {
 		transition: all 1s;
 		transition: opacity 1s;
 	}
+}
+
+.services-two-col .columns .column .img-wrapper {
+	border: 2px dashed #deeaf4;
+	margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 1024px) {
 	.services-two-col .columns .column .img-wrapper {
-		border: 2px dashed #deeaf4;
-		margin-bottom: 1.5rem;
+		margin-bottom: 2.5rem;
 	}
+}
+
+.services-two-col .columns .column .title {
+	margin-bottom: 1rem;
 }
 
 .services-two-col .columns .column .title a {
@@ -11966,7 +11984,7 @@ form.wpcf7-form .button {
 @media screen and (min-width: 1024px) {
 	.page-template-home .hero-wrap {
 		width: 100%;
-		min-height: calc(100vh - 131px);
+		min-height: calc(100vh - 150px);
 		background-color: #deeaf4;
 		position: relative;
 	}
@@ -11978,7 +11996,7 @@ form.wpcf7-form .button {
 
 @media screen and (min-width: 1024px) {
 	.page-template-home .acf-hero {
-		height: calc(100vh - (131px + 230px ));
+		height: calc(100vh - (150px + 230px ));
 	}
 }
 
@@ -12056,7 +12074,7 @@ form.wpcf7-form .button {
 		font-size: 1.750rem;
 		line-height: 2.125rem;
 		padding-right: 12rem;
-		margin-bottom: 3rem;
+		margin-bottom: 5rem;
 	}
 }
 
@@ -12155,6 +12173,7 @@ form.wpcf7-form .button {
 	.page-template-home .three-col .column:first-of-type {
 		border-right: 2px dashed #9cc1de;
 		padding-left: 0;
+		padding-right: 3rem;
 	}
 }
 
