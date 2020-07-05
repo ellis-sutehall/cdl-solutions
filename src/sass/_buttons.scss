@@ -7,19 +7,33 @@
     background-size: 25% 75%;
     text-align: right;
     padding-left: $size-2;
+    border: 0!important;
+    transition: all .3s ease;
+    
     @include from($desktop) {
         font-size: 1.75rem;
         padding-left: 5rem;
         font-size: 1.500rem;
     }
+    
     &.is-primary {
         background-color: $dark-blue;
         color: white;
         background-image: url('../img/button-bg-white.svg');
+        &:hover {
+            background-color: $mid-blue;
+        }
     }
+    
     &.is-secondary {
         background-color: white;
         color: $dark-blue;
         background-image: url('../img/button-bg-blue.svg');
+        &:hover {
+            background-color: $mid-blue;
+            background-image: url('../img/button-bg-white.svg');
+            color: white;
+        }
     }
+
 }

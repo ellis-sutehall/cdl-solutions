@@ -151,7 +151,7 @@ function cdl_solutions_scripts() {
 	
 	wp_enqueue_style( 'cdl-solutions-style-app', get_template_directory_uri() . '/dist/styles/app.css', array(), _S_VERSION );
 
-	wp_enqueue_script( 'cdl-solutions-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	// wp_enqueue_script( 'cdl-solutions-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	wp_enqueue_script( 'cdl-solutions-scroll-out', 'https://unpkg.com/scroll-out/dist/scroll-out.min.js', null, null, true );
 	

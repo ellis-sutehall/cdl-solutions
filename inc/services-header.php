@@ -13,7 +13,7 @@
                 <?php
                 $services_header_image = get_field('services_header_image');
                 if( !empty( $services_header_image ) ): ?>
-                    <img src="<?php echo esc_url($services_header_image['url']); ?>" alt="<?php echo esc_attr($services_header_image['alt']); ?>" />
+                    <img class="services-header-img" data-scroll src="<?php echo esc_url($services_header_image['url']); ?>" alt="<?php echo esc_attr($services_header_image['alt']); ?>" />
                 <?php endif; ?>
             </div>
             <div class="column is-two-thirds">

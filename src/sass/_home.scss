@@ -331,29 +331,33 @@
                 }
             }
             &:nth-of-type(odd) {
-                img {
-                    transform: translateX(-100px);
-                    opacity: 0;
-                    &[data-scroll="in"] {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                    &[data-scroll] {
-                        transition: all 1s;
+                    img {
+                        @include from($desktop) {
+                            transform: translateX(-100px);
+                            opacity: 0;
+                            &[data-scroll="in"] {
+                                opacity: 1;
+                                transform: translateX(0);
+                            }
+                            &[data-scroll] {
+                                transition: all 1s;
+                            }
                     }
                 }
             }
 
             &:nth-of-type(even) {
                 img {
-                    transform: translateX(100px);
-                    opacity: 0;
-                    &[data-scroll="in"] {
-                        opacity: 1;
-                        transform: translateX(0);
-                    }
-                    &[data-scroll] {
-                        transition: all 1s;
+                    @include from($desktop) {
+                        transform: translateX(100px);
+                        opacity: 0;
+                        &[data-scroll="in"] {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                        &[data-scroll] {
+                            transition: all 1s;
+                        }
                     }
                 }
             }

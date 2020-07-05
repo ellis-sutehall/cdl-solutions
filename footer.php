@@ -23,13 +23,13 @@
 				<p><span class="dark-blue-text">T</span> 012345678</p>
 				<p><span class="dark-blue-text">E</span> info@example.com</p>
 				<div class="social-icons">
-					<a href="#">
+					<a href="#" target="_blank" rel="norefferer">
 						<img src="<?php echo get_template_directory_uri() . '/dist/img/icons/facebook-icon.svg' ?>" alt="Facebook Icon" width="30">
 					</a>
-					<a href="#">
+					<a href="#" target="_blank" rel="norefferer">
 						<img src="<?php echo get_template_directory_uri() . '/dist/img/icons/twitter-icon.svg' ?>" alt="Twitter Icon" width="30">
 					</a>
-					<a href="#">
+					<a href="#" target="_blank" rel="norefferer">
 						<img src="<?php echo get_template_directory_uri() . '/dist/img/icons/linkedin-icon.svg' ?>" alt="LinkedIn Icon" width="30">
 					</a>
 				</div>

@@ -73,7 +73,7 @@
                             height: 9px;
                             right: 10px;
                             top: 6px;
-                            background-image: url('../img/chevron-down.svg');
+                            background-image: url('../img/chevron-down-white.svg');
                             background-repeat: no-repeat;
                             background-size: contain;
                             background-position: center;
@@ -115,6 +115,7 @@
                             &::after {
                                 right: 10px;
                                 top: 6px;
+                                background-image: url('../img/chevron-down.svg');
                             }
                         }
                         a {
