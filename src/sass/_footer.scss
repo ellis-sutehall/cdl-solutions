@@ -15,7 +15,7 @@
         }
         &:nth-of-type(2) {
             @include from($desktop) {
-                padding-left: $size-1;
+                padding-left: 5rem;
             }
         }
     }
@@ -45,26 +45,26 @@
             margin-bottom: $size-6;
         }
     }
+    
+}
 
-    .social-icons {
+.social-icons {
+    display: flex;
+    width: 100%;
+    margin-top: $size-6;
+    a {
+        width: 45px;
+        height: 45px;
+        display: block;
+        background-color: $dark-blue;
+        border-radius: 50%;
+        margin-right: 5px;
         display: flex;
-        width: 100%;
-        margin-top: $size-6;
-        a {
-            width: 45px;
-            height: 45px;
-            display: block;
-            background-color: $dark-blue;
-            border-radius: 50%;
-            margin-right: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img {
-                width: 25px;
-            }
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 25px;
         }
-        
     }
     
 }

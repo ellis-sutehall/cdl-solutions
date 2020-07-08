@@ -2,6 +2,8 @@
 
 @import '../../node_modules/bulma/bulma.sass';
 
+@import "./fontawesome/fontawesome.scss";
+@import "./fontawesome/solid.scss";
 @import './typography';
 @import './colours.scss';
 @import './buttons.scss';
@@ -11,4 +13,5 @@
 @import './heading-bar.scss';
 @import './services.scss';
 @import './contact.scss';
+@import './about';
 @import './home.scss';

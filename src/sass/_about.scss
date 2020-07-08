@@ -1,0 +1,10 @@
+.page-template-about {
+    .info {
+        order: -1;
+        @include from($desktop) {
+            .content {
+                padding-right: $size-1;
+            }
+        }
+    }
+}

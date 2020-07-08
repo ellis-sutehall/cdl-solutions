@@ -2,19 +2,61 @@
     .heading-bar {
         margin-bottom: 0;
     }
-    .map, iframe {
-        width: 100%;
-        height: 300px;
-        @include from ($desktop) {
-            height: 500px;
+
+    .info {
+        .contact-details {
+            .address {
+                display: flex;
+                margin-bottom: $size-1;
+                margin-top: $size-4;
+                .icon {
+                    margin-right: 5px;
+                    .fas {
+                        color: $dark-blue;
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .phone, .email {
+                display: flex;
+                .icon {
+                    margin-right: 5px;
+                    .fas {
+                        font-size: 1rem;
+                        color: $dark-blue;
+                    }
+                }
+            }
+            
+            .phone {
+                margin-bottom: $size-6;
+            }
+
+            .email {
+                margin-bottom: $size-1;
+            }
+
+            .social-icons {
+                margin-bottom: $size-4;
+            }
+
         }
     }
+    
     .contact-form {
         .column {
             padding-bottom: 0;
         }
         p {
             display: none;
+        }
+    }
+    
+    .map, iframe {
+        width: 100%;
+        height: 300px;
+        @include from ($desktop) {
+            height: 500px;
         }
     }
 }

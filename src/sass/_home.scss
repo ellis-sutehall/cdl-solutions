@@ -2,7 +2,7 @@
     .hero-wrap {
         @include from($desktop) {
             width: 100%;
-            min-height: calc(100vh - #{$header-height-lrg});
+            // min-height: calc(100vh - #{$header-height-lrg});
             background-color: $light-blue;
             position: relative;
         }
@@ -11,10 +11,12 @@
         // padding-top: $size-6;
         padding-bottom: 0;
         @include from($desktop) {
-            height: calc(100vh - (#{$header-height-lrg} + 230px ));
+            // height: calc(100vh - (#{$header-height-lrg} + 230px ));
+            min-height: 590px;
         }
         .hero-bg {
-            height: 100%;
+            // height: 100%;
+            min-height: 590px;
             position: relative;
             display: none;
             @include from($desktop) {
@@ -27,18 +29,17 @@
                     display: block;
                     height: 250px;
                     width: 220px;
-                    bottom: -14px;
+                    bottom: -250px;
                     left: 50%;
                     transform: translateX(-50%);
-                    opacity: 0;
-                    
+                    z-index: 90;
                     &[data-scroll="in"] {
-                        opacity: 1;
+                        bottom: -14px;
                     }
                     
                     &[data-scroll] {
                         transition: all 1s;
-                        transition-delay: 1s;
+                        // transition-delay: .5s;
                     }
                 }
             }
@@ -123,7 +124,9 @@
     }
     .three-col {
         @include from($desktop) {
-            opacity: 0;
+            z-index: 100;
+            position: relative;
+            // opacity: 0;
             &[data-scroll="in"] {
                 opacity: 1;
                 transition: opacity 1s;

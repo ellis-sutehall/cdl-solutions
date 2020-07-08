@@ -41,12 +41,42 @@ h1, h2, h3 {
     }
 }
 
-p {
+p, ul li {
     font-size: 1.125rem;
     font-weight: 600; 
 
     @include from($desktop) {
         font-size: 1.375rem;
         line-height: 1.625rem;
+    }
+}
+
+.content a,
+a {
+    color: $link-blue;
+    &:hover {
+        color: $mid-blue;
+    }
+}
+
+.container {
+    .content {
+        ul {
+            margin-left: $size-6;
+            margin-top: $size-4;
+            margin-bottom: $size-4;
+            @include from($desktop) {
+                margin-top: $size-1;
+                margin-bottom: $size-1;
+                margin-left: $size-1;
+            }
+
+            li {
+                color: $dark-blue;
+                @include from($desktop) {
+                    line-height: 2rem;
+                }
+            }
+        }
     }
 }

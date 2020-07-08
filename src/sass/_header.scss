@@ -97,12 +97,15 @@
                                 position: absolute;
                                 width: 25px;
                                 height: 35px;
-                                left: 12px;
+                                left: 18px;
                                 top: -10px;
                                 background-image: url('../img/nav-logo.svg');
                                 background-repeat: no-repeat;
                                 background-size: contain;
                                 background-position: center;
+                            }
+                            a {
+                                color: $dark-blue;
                             }
                         }
                         &.menu-item-has-children {
